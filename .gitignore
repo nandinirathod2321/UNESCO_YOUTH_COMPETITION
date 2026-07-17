@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Secrets — NEVER commit real keys
+.env
+
+# Seeded demo assets are committed: deploys boot without re-running TTS, and the
+# scripted A/B/C bundles stay byte-identical everywhere. Regenerate with `npm run seed`.
+# Runtime-generated audio (chat replies, voice-note oggs) stays out.
+cache/chat-*.mp3
+cache/out-*.mp3
+cache/*.ogg
+cache/*.wav
+
+# WhatsApp Web session (whatsapp-web.js LocalAuth) — do not commit; it's a login session
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Temp uploads from the web UI mic recorder
+uploads/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

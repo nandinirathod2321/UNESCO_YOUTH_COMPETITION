@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="gu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Truth-Anchor</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stage">
+      <div class="phone" id="phone" role="application" aria-label="Truth-Anchor WhatsApp">
+        <!-- Status bar (white, modern) -->
+        <div class="statusbar">
+          <span class="sb-time">9:41</span>
+          <span class="sb-notch"></span>
+          <span class="sb-right">
+            <span class="sb-5g">5G</span>
+            <svg viewBox="0 0 20 14" width="17" height="12" aria-hidden="true"><path d="M1 9h2v4H1zM5 6h2v7H5zM9 3h2v10H9zM13 0h2v13h-2z" fill="currentColor"/></svg>
+            <span class="sb-batt"><span class="sb-batt-fill"></span></span>
+          </span>
+        </div>
+
+        <!-- ══ SCREEN: CHAT LIST (modern Android light) ══════ -->
+        <section class="screen screen-list" id="screenList">
+          <header class="list-header">
+            <span class="wordmark">WhatsApp</span>
+            <div class="spacer"></div>
+            <button class="icon-btn dark" aria-label="Camera" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9.2 5 8 6.6H4.6A1.6 1.6 0 0 0 3 8.2v9.6A1.6 1.6 0 0 0 4.6 19.4h14.8a1.6 1.6 0 0 0 1.6-1.6V8.2a1.6 1.6 0 0 0-1.6-1.6H16l-1.2-1.6z"/><circle cx="12" cy="12.9" r="3.4"/></svg>
+            </button>
+            <button class="icon-btn dark" aria-label="Menu" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></svg>
+            </button>
+          </header>
+          <div class="list-scroll">
+            <div class="search-bar">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z" fill="currentColor"/></svg>
+              <span>Ask Meta AI or Search</span>
+            </div>
+            <div class="filter-chips">
+              <button class="fchip active">All</button>
+              <button class="fchip">Unread</button>
+              <button class="fchip">Favourites</button>
+              <button class="fchip round">+</button>
+            </div>
+            <div class="archived-row">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 5h18v3H3zM4 9h16v11H4zm5 3v2h6v-2z" fill="currentColor"/></svg>
+              <span class="arch-label">Archived</span>
+              <span class="arch-count">3</span>
+            </div>
+            <div class="chatlist" id="chatlist"></div>
+            <div class="list-hint">Tap and hold on a chat for more options</div>
+            <div class="enc-footer">
+              <svg viewBox="0 0 24 24" width="11" height="11"><path d="M12 2a5 5 0 0 0-5 5v3H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1V7a5 5 0 0 0-5-5zm3 8H9V7a3 3 0 0 1 6 0z" fill="currentColor"/></svg>
+              Your personal messages are <b>end-to-end encrypted</b>
+            </div>
+          </div>
+          <button class="list-fab" id="listFab" aria-label="New chat" tabindex="-1">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 3H5a2 2 0 0 0-2 2v16l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-6 10h-2v-2H9V9h2V7h2v2h2v2h-2z" fill="currentColor"/></svg>
+          </button>
+          <nav class="bottom-nav">
+            <button class="nav-item active">
+              <span class="nav-ic"><svg viewBox="0 0 24 24" width="25" height="25"><path d="M6.2 4h11.6A2.2 2.2 0 0 1 20 6.2v7.1a2.2 2.2 0 0 1-2.2 2.2H9.5L6.1 19a.7.7 0 0 1-1.1-.55V6.2A2.2 2.2 0 0 1 6.2 4z" fill="currentColor"/><path d="M8 8.4h8M8 11.2h5.4" stroke="#d9fdd3" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+              <span class="nav-lb">Chats</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-ic"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.1"/><path d="M12 4.2v1.7M18.9 8l-1.5.85" stroke-linecap="round"/></svg></span>
+              <span class="nav-lb">Updates</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-ic"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="15.6" cy="8.3" r="2.5" fill="currentColor"/><path d="M11.4 17.6a4.4 4.4 0 0 1 8.6 0z" fill="currentColor"/><circle cx="9" cy="8.5" r="3.3" fill="currentColor"/><path d="M3.2 18.4a5.8 5.8 0 0 1 11.6 0z" fill="currentColor"/></svg></span>
+              <span class="nav-lb">Contacts</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6.9 11a14 14 0 0 0 6.1 6.1l2-2a1.2 1.2 0 0 1 1.2-.3 12 12 0 0 0 3.4.6 1.2 1.2 0 0 1 1.2 1.2v3.1A1.2 1.2 0 0 1 20.6 21 16.6 16.6 0 0 1 3 3.4 1.2 1.2 0 0 1 4.2 2.2h3.1a1.2 1.2 0 0 1 1.2 1.2 12 12 0 0 0 .6 3.4 1.2 1.2 0 0 1-.3 1.2z"/></svg></span>
+              <span class="nav-lb">Calls</span>
+            </button>
+          </nav>
+        </section>
+
+        <!-- ══ SCREEN: CONVERSATION ══════════════════════════ -->
+        <section class="screen screen-chat" id="screenChat" hidden>
+          <header class="chat-header" id="chatHeader">
+            <button class="icon-btn dark hdr-back" id="backBtn" aria-label="Back">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4.5M11 5l-7 7 7 7"/></svg>
+            </button>
+            <div class="hdr-avatar" id="chatAvatar" aria-hidden="true"></div>
+            <div class="hdr-meta">
+              <div class="hdr-title"><span class="hdr-name" id="chatName"></span><span id="chatVerified"></span></div>
+              <div class="hdr-status" id="chatStatus"></div>
+            </div>
+            <button class="icon-btn dark" aria-label="Video call" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.6" y="6.4" width="13" height="11.2" rx="2.4"/><path d="M15.6 10.4 21 7.3v9.4l-5.4-3z"/></svg>
+            </button>
+            <button class="icon-btn dark" aria-label="Voice call" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6.9 11a14 14 0 0 0 6.1 6.1l2-2a1.2 1.2 0 0 1 1.2-.3 12 12 0 0 0 3.4.6 1.2 1.2 0 0 1 1.2 1.2v3.1A1.2 1.2 0 0 1 20.6 21 16.6 16.6 0 0 1 3 3.4 1.2 1.2 0 0 1 4.2 2.2h3.1a1.2 1.2 0 0 1 1.2 1.2 12 12 0 0 0 .6 3.4 1.2 1.2 0 0 1-.3 1.2z"/></svg>
+            </button>
+            <button class="icon-btn dark" aria-label="Menu" tabindex="-1">
+              <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></svg>
+            </button>
+          </header>
+
+          <header class="sel-header" id="selHeader" hidden>
+            <button class="icon-btn dark" id="selCancel" aria-label="Cancel selection">
+              <svg viewBox="0 0 24 24" width="24" height="24"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z" fill="currentColor"/></svg>
+            </button>
+            <span class="sel-count" id="selCount">1</span>
+            <div class="spacer"></div>
+            <button class="icon-btn dark" id="selReply" aria-label="Reply"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M10 9V5l-7 7 7 7v-4c5 0 8.5 1.6 11 5-1-5-4-10-11-11z" fill="currentColor"/></svg></button>
+            <button class="icon-btn dark" id="selStar" aria-label="Star"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2l3 6.5 7 .6-5.3 4.6L18.3 21 12 17.3 5.7 21l1.6-7.3L2 9.1l7-.6z" fill="currentColor"/></svg></button>
+            <button class="icon-btn dark" id="selDelete" aria-label="Delete"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 7h12l-1 14H7zM9 4h6l1 2H8zM4 6h16v2H4z" fill="currentColor"/></svg></button>
+            <button class="icon-btn dark sel-forward" id="selForward" aria-label="Forward"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 8V4l8 8-8 8v-4H4V8z" fill="currentColor"/></svg></button>
+          </header>
+
+          <main class="chat" id="chat">
+            <div class="messages" id="messages"></div>
+            <div class="typing-row" id="typing" hidden>
+              <div class="bubble in typing-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            </div>
+          </main>
+
+          <div class="quick-chips" id="quickChips" hidden>
+            <button class="qchip voice-chip" id="voiceToggle" aria-label="Toggle voice replies"><span class="vc-ic">🔈</span>Voice: Off</button>
+            <button class="qchip" data-q="આ મેસેજ સાચો છે કે છેતરપિંડી?">Is this a scam?</button>
+            <button class="qchip" data-q="એક શંકાસ્પદ મેસેજ તપાસવો છે">Check a message</button>
+            <button class="qchip" data-q="આ હેલ્થ દાવો સાચો છે?">Health claim?</button>
+            <button class="qchip" data-q="OTP કોઈને આપવો સલામત છે?">Is sharing OTP safe?</button>
+          </div>
+
+          <footer class="input-bar">
+            <div class="input-pill">
+              <button class="icon-btn muted" aria-label="Emoji" tabindex="-1"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="8.8" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.2" cy="10.2" r="1.15" fill="currentColor" stroke="none"/><path d="M8.2 14.3a5 5 0 0 0 7.6 0" stroke-linecap="round"/></svg></button>
+              <input class="msg-input" id="msgInput" placeholder="Message" aria-label="Message" />
+              <button class="icon-btn muted" id="attachBtn" aria-label="Attach"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16.6 6.3 8.7 14.2a2 2 0 0 0 2.83 2.83l7.9-7.9a4 4 0 0 0-5.66-5.66l-7.9 7.9a6 6 0 0 0 8.49 8.49l6.4-6.4"/></svg></button>
+              <button class="icon-btn muted" id="cameraBtn" aria-label="Camera" tabindex="-1"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9.2 5 8 6.6H4.6A1.6 1.6 0 0 0 3 8.2v9.6A1.6 1.6 0 0 0 4.6 19.4h14.8a1.6 1.6 0 0 0 1.6-1.6V8.2a1.6 1.6 0 0 0-1.6-1.6H16l-1.2-1.6z"/><circle cx="12" cy="12.9" r="3.4"/></svg></button>
+            </div>
+            <button class="fab" id="micBtn" aria-label="Record / send">
+              <svg class="fab-mic" viewBox="0 0 24 24" width="24" height="24"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2z" fill="currentColor"/></svg>
+              <svg class="fab-send" viewBox="0 0 24 24" width="22" height="22"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z" fill="currentColor"/></svg>
+            </button>
+          </footer>
+
+          <!-- recording overlay (slide to cancel) -->
+          <div class="rec-overlay" id="recOverlay" hidden>
+            <svg class="rec-mic" viewBox="0 0 24 24" width="20" height="20"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2z" fill="currentColor"/></svg>
+            <span class="rec-time" id="recTime">0:00</span>
+            <span class="rec-cancel"><svg viewBox="0 0 24 24" width="15" height="15"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> slide to cancel</span>
+          </div>
+          <div class="rec-lock" id="recLock" hidden>
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a5 5 0 0 0-5 5v3H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1V7a5 5 0 0 0-5-5zm3 8H9V7a3 3 0 0 1 6 0z" fill="currentColor"/></svg>
+            <svg class="rec-lock-up" viewBox="0 0 24 24" width="14" height="14"><path d="M12 5l-6 6M12 5l6 6M12 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </section>
+
+        <!-- ══ Attachment sheet (Part C) ═════════════════════ -->
+        <div class="sheet-scrim" id="attachScrim" hidden></div>
+        <section class="attach-sheet" id="attachSheet" aria-hidden="true">
+          <div class="attach-grid">
+            <button class="att-item" data-att="document"><span class="att-ic" style="background:#7f66ff"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 2h8l4 4v16H6zM14 2v4h4" fill="none" stroke="#fff" stroke-width="2"/></svg></span>Document</button>
+            <button class="att-item" data-att="camera"><span class="att-ic" style="background:#ff2e74"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M9.5 5 8 7H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-1.5-2h-5zM12 17a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#fff"/></svg></span>Camera</button>
+            <button class="att-item" data-att="gallery"><span class="att-ic" style="background:#c150ff"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 5h16v14H4zM8 11l2.5 3 3.5-4.5L19 17H5z" fill="#fff"/></svg></span>Gallery</button>
+            <button class="att-item" data-att="audio"><span class="att-ic" style="background:#ff7a2f"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm7 9a7 7 0 0 1-6 6.92V22h-2v-3.08A7 7 0 0 1 5 12h2a5 5 0 0 0 10 0z" fill="#fff"/></svg></span>Audio</button>
+            <button class="att-item" data-att="location"><span class="att-ic" style="background:#1fa855"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="#fff"/></svg></span>Location</button>
+            <button class="att-item" data-att="contact"><span class="att-ic" style="background:#009de0"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 21a8 8 0 0 1 16 0z" fill="#fff"/></svg></span>Contact</button>
+          </div>
+        </section>
+        <input type="file" id="audioFileInput" accept="audio/*,.mp3,.m4a,.ogg,.wav,.aac,.opus" hidden />
+
+        <!-- ══ Forward-to sheet ══════════════════════════════ -->
+        <div class="sheet-scrim" id="sheetScrim" hidden></div>
+        <section class="fwd-sheet" id="fwdSheet" aria-hidden="true">
+          <header class="fwd-head">
+            <button class="icon-btn dark fwd-close" id="fwdClose" aria-label="Close"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z" fill="currentColor"/></svg></button>
+            <div class="fwd-title">Forward to…</div>
+            <button class="icon-btn dark" aria-label="Search" tabindex="-1"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z" fill="currentColor"/></svg></button>
+          </header>
+          <div class="fwd-search"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z" fill="currentColor"/></svg><input placeholder="Search" aria-label="Search" /></div>
+          <div class="fwd-section">Recent chats</div>
+          <div class="fwd-list" id="fwdList"></div>
+          <div class="fwd-sendbar" id="fwdSendbar" hidden>
+            <div class="fwd-selected" id="fwdSelected"></div>
+            <button class="fwd-send" id="fwdSend" aria-label="Send"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z" fill="currentColor"/></svg></button>
+          </div>
+        </section>
+
+        <div class="toast" id="toast" hidden></div>
+        <div class="drop-hint" id="dropHint" hidden>Drop audio to add a voice note</div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

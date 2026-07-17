@@ -1,0 +1,24 @@
+{
+  "transcript": "બેટા, હું હોસ્પિટલમાં છું, અકસ્માત થયો છે. કોઈને કહેતો નહીં, જલ્દી ₹40,000 આ નંબર પર મોકલ. ફોન કપાઈ રહ્યો છે...",
+  "verdict": "scam",
+  "category": "scam",
+  "tactic": "ઉતાવળ અને ગુપ્તતા (તાત્કાલિક પૈસા માંગવા, કોઈને ન કહેવાનું દબાણ)",
+  "reply_gujarati": "સાવધાન રહો! આ સંદેશ છેતરપિંડી હોઈ શકે છે. ઠગ લોકો \"અકસ્માત થયો છે, જલ્દી પૈસા મોકલ, કોઈને કહેતા નહીં\" એવું કહીને ઉતાવળ અને ડર ઊભો કરે છે, જેથી તમે વિચાર્યા વગર પૈસા મોકલી દો. પૈસા મોકલતા પહેલાં ફોન મૂકી દો અને તમારા દીકરા કે ઘરના સભ્યને જાતે ફોન કરીને ખાતરી કરો.",
+  "confidence": "high",
+  "subtitle_en": "Likely a scam — it uses panic and secrecy to rush you into paying. Before sending any money, hang up and call your family member directly to check.",
+  "pill": {
+    "kind": "scam",
+    "text": "🛡️ છેતરપિંડીની યુક્તિ: ઉતાવળ અને ગુપ્તતા (તાત્કાલિક પૈસા માંગવા, કોઈને ન કહેવાનું દબાણ)",
+    "chip": null
+  },
+  "citation": {
+    "name": "Cyber Crime (I4C) · 1930",
+    "org": "Indian Cyber Crime Coordination Centre",
+    "url": "https://cybercrime.gov.in",
+    "line": "Family/hospital emergencies are never handled by secret, rushed money transfers. Verify by calling back; report at 1930."
+  },
+  "replyAudioUrl": "/media/replyA.mp3",
+  "inputAudioUrl": "/media/sampleA_input.mp3",
+  "sampleId": "A",
+  "source": "cache"
+}

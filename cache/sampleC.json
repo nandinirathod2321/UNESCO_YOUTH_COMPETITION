@@ -1,0 +1,24 @@
+{
+  "transcript": "સાંભળ્યું છે કે આવતા મહિનેથી પેન્શનના નિયમો બદલાઈ રહ્યા છે, બધા સાવધાન રહેજો.",
+  "verdict": "unsure",
+  "category": "unsure",
+  "tactic": "અધૂરી અને અસ્પષ્ટ માહિતી (સ્રોત વગરની અફવા)",
+  "reply_gujarati": "માફ કરશો, આ સંદેશ વિશે હું ખાતરીપૂર્વક કંઈ કહી શકતો નથી. તેમાં પૂરતી અને સ્પષ્ટ માહિતી નથી. કૃપા કરીને કોઈ ભરોસાપાત્ર સરકારી કચેરી, બેંક કે ઘરના જાણકાર સભ્યને પૂછીને ખાતરી કરો — અફવા પર ભરોસો ન કરો.",
+  "confidence": "low",
+  "subtitle_en": "Not sure — the message is vague and can't be verified. Please check with an official office or a trusted family member before believing or forwarding it.",
+  "pill": {
+    "kind": "unsure",
+    "text": "ⓘ ખાતરી નથી — કૃપા કરીને જાતે ચકાસો",
+    "chip": null
+  },
+  "citation": {
+    "name": "PIB Fact Check",
+    "org": "Press Information Bureau, Govt. of India",
+    "url": "https://pib.gov.in/factcheck.aspx",
+    "line": "Unverified rumours about rules/benefits should be checked with the official department."
+  },
+  "replyAudioUrl": "/media/replyC.mp3",
+  "inputAudioUrl": "/media/sampleC_input.mp3",
+  "sampleId": "C",
+  "source": "cache"
+}
