@@ -1,0 +1,15 @@
+# Never bake secrets or a WhatsApp login session into an image.
+.env
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Rebuilt inside the image / recreated at runtime.
+node_modules/
+uploads/
+cache/chat-*.mp3
+cache/out-*.mp3
+cache/*.ogg
+cache/*.wav
+
+.git/
+*.log
